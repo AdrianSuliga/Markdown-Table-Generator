@@ -70,9 +70,9 @@ def write_table_row(line:str, readme, comments:list[list[str]]) -> None:
     readme.write(str_to_append)
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description='Generate markdown table in README.md based on celka.dbc')
+    parser = argparse.ArgumentParser(description='Generate markdown table in README.md based on .dbc file')
     parser.add_argument('readme', help='path to readme.md')
-    parser.add_argument('dbc', help='path to celka.dbc')
+    parser.add_argument('dbc', help='path to .dbc file')
     args = parser.parse_args()
     readme_path = args.readme
     dbc_path = args.dbc
@@ -84,15 +84,9 @@ def main() -> None:
     dbc = open(dbc_path, "r")
     write_table_headers(readme)
 
-    is_sbg_info = False
-
     for line in dbc:
-        if "SBG" in line and "BO_" in line:
-            is_sbg_info = True
-        if ("CELKA" in line or "VAL_" in line) and "BO_" in line:
-            is_sbg_info = False
-        if not is_sbg_info:
-            write_table_row(line, readme, comments)
+        write_table_row(line, readme, comments)
+        
     readme.close()
     dbc.close()        
 

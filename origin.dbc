@@ -31,146 +31,71 @@ NS_ :
     SG_MUL_VAL_
 
 BS_: 
-BU_: CELKA SBG 
-BO_ 0 MOTOR_POWER: 8 CELKA
+BU_: VEHICLE 
+BO_ 0 MOTOR_POWER: 8 VEHICLE
    SG_ MAIN_MOTOR_POT : 0|16@1- (0.1,0) [-100|100] "%" Vector__XXX
    SG_ PADDLE_MOTOR_POT : 16|16@1- (0.1,0) [-100|100] "%" Vector__XXX
    SG_ UNUSED1 : 32|16@1- (1,0) [0|1] "" Vector__XXX
    SG_ UNUSED2 : 48|16@1- (1,0) [0|1] "" Vector__XXX
 
-BO_ 1 HYDROFOIL_ANGLES: 8 CELKA
+BO_ 1 HYDROFOIL_ANGLES: 8 VEHICLE
    SG_ LEFT_ANGLE : 0|16@1- (0.01,0) [-10|10] "" Vector__XXX
    SG_ RIGHT_ANGLE : 16|16@1- (0.01,0) [-10|10] "" Vector__XXX
    SG_ UNUSED1 : 32|16@1- (1,0) [0|1] "" Vector__XXX
    SG_ UNUSED2 : 48|16@1- (1,0) [0|1] "" Vector__XXX
 
-BO_ 5 STEERING_REQUEST: 8 CELKA
+BO_ 5 STEERING_REQUEST: 8 VEHICLE
    SG_ HYDROFOIL_CONTROL_MODE : 0|8@1+ (1,0) [0|2] "" Vector__XXX
    SG_ JOY_X : 8|16@1+ (1,0) [0|4000] "" Vector__XXX
    SG_ JOY_Y : 24|16@1+ (1,0) [0|4000] "" Vector__XXX
    SG_ COOLING_PUMP : 40|8@1+ (1,0) [0|2] "" Vector__XXX
    SG_ UNUSED1 : 48|16@1- (1,0) [0|1] "" Vector__XXX
 
-BO_ 15 GPS1_VEL_INFO: 8 SBG
-   SG_ TIME_STAMP : 0|32@1+ (1,0) [0|1] "µs" Vector__XXX
-   SG_ GPS_VEL_STATUS : 32|32@1+ (1,0) [0|1] "" Vector__XXX
-
-BO_ 16 GPS1_VEL: 6 SBG
-   SG_ VEL_N : 0|16@1- (0.01,0) [0|1] "m/s" Vector__XXX
-   SG_ VEL_E : 16|16@1- (0.01,0) [0|1] "m/s" Vector__XXX
-   SG_ VEL_D : 32|16@1- (0.01,0) [0|1] "m/s" Vector__XXX
-
-BO_ 17 GPS1_VEL_ACC: 6 SBG
-   SG_ VEL_ACC_N : 0|16@1+ (0.01,0) [0|1] "m/s" Vector__XXX
-   SG_ VEL_ACC_E : 16|16@1+ (0.01,0) [0|1] "m/s" Vector__XXX
-   SG_ VEL_ACC_D : 32|16@1+ (0.01,0) [0|1] "m/s" Vector__XXX
-
-BO_ 18 GPS1_COURSE: 4 SBG
-   SG_ COURSE : 0|16@1+ (0.01,0) [0|1] "grade" Vector__XXX
-   SG_ COURSE_ACC : 16|16@1+ (0.01,0) [0|1] "grade" Vector__XXX
-
-BO_ 19 GPS1_POS_INFO: 8 SBG
-   SG_ TIME_STAMP : 0|32@1+ (1,0) [0|1] "µs" Vector__XXX
-   SG_ GPS_POS_STATUS : 32|32@1+ (1,0) [0|1] "" Vector__XXX
-
-BO_ 20 GPS1_POS: 8 SBG
-   SG_ LATITUDE : 0|32@1+ (0.0000001,0) [0|1] "grade" Vector__XXX
-   SG_ LONGITUDE : 32|32@1+ (0.0000001,0) [0|1] "grade" Vector__XXX
-
-BO_ 21 GPS1_POS_ACC: 6 SBG
-   SG_ LAT_ACC : 0|16@1+ (0.01,0) [0|1] "m" Vector__XXX
-   SG_ LONG_ACC : 16|16@1+ (0.01,0) [0|1] "m" Vector__XXX
-   SG_ ALT_ACC : 32|16@1+ (0.01,0) [0|1] "m" Vector__XXX
-
-BO_ 25 UTC_1: 8 SBG
-   SG_ YEAR : 0|8@1+ (1,0) [0|1] "year" Vector__XXX
-   SG_ MONTH : 8|8@1+ (1,0) [0|1] "month" Vector__XXX
-   SG_ DAY : 16|8@1+ (1,0) [0|1] "day" Vector__XXX
-   SG_ HOUR : 24|8@1+ (1,0) [0|1] "h" Vector__XXX
-   SG_ MIN : 32|8@1+ (1,0) [0|1] "min" Vector__XXX
-   SG_ SEC : 40|8@1+ (1,0) [0|1] "s" Vector__XXX
-   SG_ TENTHMS : 48|16@1+ (0.0001,0) [0|1] "s" Vector__XXX
-
-BO_ 26 IMU_ACCEL: 6 SBG
-   SG_ ACCEL_X : 0|16@1- (0.01,0) [0|1] "m/s^2" Vector__XXX
-   SG_ ACCEL_Y : 16|16@1- (0.01,0) [0|1] "m/s^2" Vector__XXX
-   SG_ ACCEL_Z : 32|16@1- (0.01,0) [0|1] "m/s^2" Vector__XXX
-
-BO_ 27 IMU_GYRO: 6 SBG
-   SG_ GYRO_X : 0|16@1- (0.001,0) [0|1] "rad/s" Vector__XXX
-   SG_ GYRO_Y : 16|16@1- (0.001,0) [0|1] "rad/s" Vector__XXX
-   SG_ GYRO_Z : 32|16@1- (0.001,0) [0|1] "rad/s" Vector__XXX
-
-BO_ 28 EKF_QUAT: 8 SBG
-   SG_ Q0 : 0|16@1- (3.052e-05,0) [0|1] "" Vector__XXX
-   SG_ Q1 : 16|16@1- (3.052e-05,0) [0|1] "" Vector__XXX
-   SG_ Q2 : 32|16@1- (3.052e-05,0) [0|1] "" Vector__XXX
-   SG_ Q3 : 48|16@1- (3.052e-05,0) [0|1] "" Vector__XXX
-
-BO_ 29 EKF_EULER: 6 SBG
-   SG_ ROLL : 0|16@1- (0.0001,0) [0|1] "rad" Vector__XXX
-   SG_ PITCH : 16|16@1- (0.0001,0) [0|1] "rad" Vector__XXX
-   SG_ YAW : 32|16@1- (0.0001,0) [0|1] "rad" Vector__XXX
-
-BO_ 30 EKF_POS: 8 SBG
-   SG_ LATITUDE : 0|32@1- (1e-07,0) [0|1] "grade" Vector__XXX
-   SG_ LONGITUDE : 32|32@1- (1e-07,0) [0|1] "grade" Vector__XXX
-
-BO_ 31 EKF_VEL: 6 SBG
-   SG_ VELOCITY_N : 0|16@1- (0.01,0) [0|1] "m/s" Vector__XXX
-   SG_ VELOCITY_E : 16|16@1- (0.01,0) [0|1] "m/s" Vector__XXX
-   SG_ VELOCITY_D : 32|16@1- (0.01,0) [0|1] "m/s" Vector__XXX
-
-BO_ 32 SHIP_MOTION_0: 6 SBG
-   SG_ SURGE : 0|16@1- (0.001,0) [0|1] "m" Vector__XXX
-   SG_ SWAY : 16|16@1- (0.001,0) [0|1] "m" Vector__XXX
-   SG_ HEAVE : 32|16@1- (0.001,0) [0|1] "m" Vector__XXX
-
-BO_ 33 MOTOR_STATUS: 8 CELKA
+BO_ 33 MOTOR_STATUS: 8 VEHICLE
    SG_ MOTOR_TEMPERATURE_1 : 0|16@1+ (1,0) [0|200] "C" Vector__XXX
    SG_ MOTOR_TEMPERATURE_2 : 16|16@1+ (1,0) [0|200] "C" Vector__XXX
    SG_ UNUSED1 : 32|16@1- (1,0) [0|1] "" Vector__XXX
    SG_ UNUSED2 : 48|16@1- (1,0) [0|1] "" Vector__XXX
 
-BO_ 34 BMS_DATA: 8 CELKA
+BO_ 34 BMS_DATA: 8 VEHICLE
    SG_ MAX_CELL_VOLTAGE : 0|16@1+ (0.0001,0) [0|5] "V" Vector__XXX
    SG_ MIN_CELL_VOLTAGE : 16|16@1+ (0.0001,0) [0|5] "V" Vector__XXX
    SG_ DISCHARGE_CURRENT : 32|16@1+ (0.01,0) [-20|500] "A" Vector__XXX
    SG_ CHARGE_CURRENT : 48|16@1+ (0.01,0) [0|100] "A" Vector__XXX
 
-BO_ 35 MAIN_BOX_TEMP: 8 CELKA
+BO_ 35 MAIN_BOX_TEMP: 8 VEHICLE
    SG_ TEMP1 : 0|16@1+ (0.01,0) [0|200] "C" Vector__XXX
    SG_ TEMP2 : 16|16@1+ (0.01,0) [0|200] "C" Vector__XXX
    SG_ TEMP3 : 32|16@1+ (0.01,0) [0|200] "C" Vector__XXX
    SG_ UNUSED1 : 48|16@1- (1,0) [0|1] "" Vector__XXX
 
-BO_ 36 SUPP_BOARD_CURRENTS_1: 8 CELKA
+BO_ 36 SUPP_BOARD_CURRENTS_1: 8 VEHICLE
    SG_ ENGINE_PUMP_CURRENT : 0|16@1+ (0.001,0) [0|5] "A" Vector__XXX
    SG_ ESC_PUMP_CURRENT : 16|16@1+ (0.001,0) [0|5] "A" Vector__XXX
    SG_ MAIN_BILGE_CURRENT : 32|16@1+ (0.001,0) [0|5] "A" Vector__XXX
    SG_ MOTOR_BILGE_CURRENT : 48|16@1+ (0.001,0) [0|5] "A" Vector__XXX
 
-BO_ 37 SUPP_BOARD_CURRENTS_2: 8 CELKA
+BO_ 37 SUPP_BOARD_CURRENTS_2: 8 VEHICLE
    SG_ FAN_BOX_CURRENT : 0|16@1+ (0.001,0) [0|5] "A" Vector__XXX
    SG_ FAN_BATTERY_CURRENT : 16|16@1+ (0.001,0) [0|5] "A" Vector__XXX
    SG_ UNUSED1 : 32|16@1- (1,0) [0|1] "" Vector__XXX
    SG_ UNUSED2 : 48|16@1- (1,0) [0|1] "" Vector__XXX
 
-BO_ 38 SUPP_BOARD_TEMP: 8 CELKA
+BO_ 38 SUPP_BOARD_TEMP: 8 VEHICLE
    SG_ TEMP1 : 0|16@1+ (1,0) [0|200] "C" Vector__XXX
    SG_ TEMP2 : 16|16@1+ (1,0) [0|200] "C" Vector__XXX
    SG_ TEMP3 : 32|16@1+ (1,0) [0|200] "C" Vector__XXX
    SG_ UNUSED1 : 48|16@1- (1,0) [0|1] "" Vector__XXX
 
-BO_ 39 PV_VOLTAGE: 8 CELKA
+BO_ 39 PV_VOLTAGE: 8 VEHICLE
    SG_ PV_SERIES_IDX : 0|8@1+ (1,0) [0|7] "" Vector__XXX
    SG_ VOLTAGE : 8|32@1+ (1,0) [0|60000] "mV" Vector__XXX
 
-BO_ 40 PV_CURRENT: 5 CELKA
+BO_ 40 PV_CURRENT: 5 VEHICLE
    SG_ PV_SERIES_IDX : 0|8@1+ (1,0) [0|7] "" Vector__XXX
    SG_ CURRENT : 8|32@1- (1,0) [-4000|6000] "mA" Vector__XXX
 
-BO_ 41 DMS_INDICATOR: 8 CELKA
+BO_ 41 DMS_INDICATOR: 8 VEHICLE
    SG_ DMS_INDICATOR : 0|8@1+ (1,0) [0|1] "" Vector__XXX
    SG_ UNUSED1 : 8|8@1- (1,0) [0|1] "" Vector__XXX
    SG_ UNUSED2 : 16|16@1- (1,0) [0|1] "" Vector__XXX
