@@ -32,22 +32,19 @@ NS_ :
 
 BS_: 
 BU_: VEHICLE 
-BO_ 0 MOTOR_POWER: 8 VEHICLE
-   SG_ MAIN_MOTOR_POT : 0|16@1- (0.1,0) [-100|100] "%" Vector__XXX
-   SG_ PADDLE_MOTOR_POT : 16|16@1- (0.1,0) [-100|100] "%" Vector__XXX
+BO_ 0 MOTOR_POWER: 6 VEHICLE
+   SG_ MAIN_MOTOR : 0|16@1- (0.1,0) [-100|100] "%" Vector__XXX
+   SG_ PADDLE_MOTOR : 16|16@1- (0.1,0) [-100|100] "%" Vector__XXX
    SG_ UNUSED1 : 32|16@1- (1,0) [0|1] "" Vector__XXX
-   SG_ UNUSED2 : 48|16@1- (1,0) [0|1] "" Vector__XXX
 
-BO_ 1 HYDROFOIL_ANGLES: 8 VEHICLE
+BO_ 1 HYDROFOIL_ANGLES: 4 VEHICLE
    SG_ LEFT_ANGLE : 0|16@1- (0.01,0) [-10|10] "" Vector__XXX
    SG_ RIGHT_ANGLE : 16|16@1- (0.01,0) [-10|10] "" Vector__XXX
-   SG_ UNUSED1 : 32|16@1- (1,0) [0|1] "" Vector__XXX
-   SG_ UNUSED2 : 48|16@1- (1,0) [0|1] "" Vector__XXX
 
 BO_ 5 STEERING_REQUEST: 8 VEHICLE
    SG_ HYDROFOIL_CONTROL_MODE : 0|8@1+ (1,0) [0|2] "" Vector__XXX
-   SG_ JOY_X : 8|16@1+ (1,0) [0|4000] "" Vector__XXX
-   SG_ JOY_Y : 24|16@1+ (1,0) [0|4000] "" Vector__XXX
+   SG_ X_AXIS : 8|16@1+ (1,0) [0|4000] "" Vector__XXX
+   SG_ Y_AXIS : 24|16@1+ (1,0) [0|4000] "" Vector__XXX
    SG_ COOLING_PUMP : 40|8@1+ (1,0) [0|2] "" Vector__XXX
    SG_ UNUSED1 : 48|16@1- (1,0) [0|1] "" Vector__XXX
 
@@ -58,10 +55,10 @@ BO_ 33 MOTOR_STATUS: 8 VEHICLE
    SG_ UNUSED2 : 48|16@1- (1,0) [0|1] "" Vector__XXX
 
 BO_ 34 BMS_DATA: 8 VEHICLE
-   SG_ MAX_CELL_VOLTAGE : 0|16@1+ (0.0001,0) [0|5] "V" Vector__XXX
-   SG_ MIN_CELL_VOLTAGE : 16|16@1+ (0.0001,0) [0|5] "V" Vector__XXX
-   SG_ DISCHARGE_CURRENT : 32|16@1+ (0.01,0) [-20|500] "A" Vector__XXX
-   SG_ CHARGE_CURRENT : 48|16@1+ (0.01,0) [0|100] "A" Vector__XXX
+   SG_ MAX_CELL_VOLTAGE : 0|16@1+ (0.00001,0) [0|5] "V" Vector__XXX
+   SG_ MIN_CELL_VOLTAGE : 16|16@1+ (0.00001,0) [0|5] "V" Vector__XXX
+   SG_ DISCHARGE_CURRENT : 32|16@1+ (0.1,0) [-20|500] "A" Vector__XXX
+   SG_ CHARGE_CURRENT : 48|16@1+ (0.1,0) [0|100] "A" Vector__XXX
 
 BO_ 35 MAIN_BOX_TEMP: 8 VEHICLE
    SG_ TEMP1 : 0|16@1+ (0.01,0) [0|200] "C" Vector__XXX
@@ -87,7 +84,7 @@ BO_ 38 SUPP_BOARD_TEMP: 8 VEHICLE
    SG_ TEMP3 : 32|16@1+ (1,0) [0|200] "C" Vector__XXX
    SG_ UNUSED1 : 48|16@1- (1,0) [0|1] "" Vector__XXX
 
-BO_ 39 PV_VOLTAGE: 8 VEHICLE
+BO_ 39 PV_VOLTAGE: 5 VEHICLE
    SG_ PV_SERIES_IDX : 0|8@1+ (1,0) [0|7] "" Vector__XXX
    SG_ VOLTAGE : 8|32@1+ (1,0) [0|60000] "mV" Vector__XXX
 
