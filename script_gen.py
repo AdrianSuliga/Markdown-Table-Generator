@@ -3,8 +3,8 @@
 import argparse
 # headings for table
 def write_table_headers(readme) -> None:
-    readme.write("|Message name|ID|Message Size (bytes)|Signal name|Unit|Format|Size (bits)|Scaling|Offset|Min|Max|Comment|Tested|\n")
-    readme.write("|---|:---:|:---:|---|---|:---:|:---:|:---:|:---:|:---:|:---:|---|---|\n")
+    readme.write("|Message name|ID|Message Size (bytes)|Signal name|Size (bits)|Format|Scaling|Offset|Min|Max|Unit|Comment|\n")
+    readme.write("|---|:---:|:---:|---|---|:---:|:---:|:---:|:---:|:---:|:---:|---|\n")
 
 #overwriting previous text with empty string
 def clear_readme(path):
@@ -64,9 +64,9 @@ def write_table_row(line:str, readme, comments:list[list[str]]) -> None:
     if "BO_" in words_in_line:
         str_to_append += "|" + words_in_line[2][:-1] + "|" + signal_extract(words_in_line[1]) + "|" + words_in_line[3] + "|"
     elif "SG_" in words_in_line: 
-        str_to_append += words_in_line[1] + "|" + words_in_line[6][1:-1] + "|" + format_extract(words_in_line[3]) + "|" + size_extract(words_in_line[3]) + "|"
+        str_to_append += words_in_line[1] + "|" + size_extract(words_in_line[3]) + "|" + format_extract(words_in_line[3]) + "|"
         str_to_append += scaling_extract(words_in_line[4]) + "|" + offset_extract(words_in_line[4]) + "|" + min_extract(words_in_line[5]) + "|"
-        str_to_append += max_extract(words_in_line[5]) + "|" + extract_comments(comments, line) + "||\n"
+        str_to_append += max_extract(words_in_line[5]) + "|" + words_in_line[6][1:-1] + "|" + extract_comments(comments, line) + "||\n"
     readme.write(str_to_append)
 
 def main() -> None:
